@@ -19,27 +19,19 @@ Program ini menggunakan beberapa kelas untuk mengimplementasikan konsep OOP:
 
 1. `BookStore` (kelas abstrak): Kelas ini menjadi blueprint untuk toko buku. Kelas ini memiliki properti `name` dan `books`, serta metode untuk menambah, menghapus, dan mencari buku.
 
-2. `OnlineBookStore` (kelas konkret): Kelas ini mewarisi dari `BookStore` dan mengimplementasikan metode `searchBooks` yang melakukan pencarian buku secara asinkron.
+2. `OnlineBookStore` : Kelas ini mewarisi dari `BookStore` dan mengimplementasikan metode `searchBooks` yang melakukan pencarian buku secara asinkron.
 
 3. `Book`: Kelas ini digunakan untuk merepresentasikan data buku, dengan properti `title`, `author`, dan `price`.
 
 ## Implementasi Asynchronous
 
-Program ini menggunakan konsep asynchronous programming untuk menyimulasikan operasi pencarian buku yang memakan waktu, seperti permintaan jaringan atau operasi I/O.
+Program ini menggunakan konsep asynchronous programming untuk menyimulasikan operasi pencarian buku yang memakan waktu, seperti permintaan jaringan.
 
 1. Metode `searchBooks` di kelas `OnlineBookStore` mengembalikan `Future<List<Book>>`, yang menunjukkan operasi asinkron.
 
 2. Pencarian buku dilakukan dengan memanggil `bookStore.searchBooks` dan menunggu hasilnya menggunakan `await`.
 
 3. Simulasi penundaan 2 detik dilakukan dengan `Future.delayed` untuk menyimulasikan operasi asinkron.
-
-## Penggunaan
-
-1. Buat instance dari `OnlineBookStore` dengan nama "Toko Buku Online".
-
-2. Tambahkan beberapa buku ke toko menggunakan `bookStore.addBook`.
-
-3. Lakukan pencarian buku dengan memanggil `bookStore.searchBooks` dan menampilkan hasilnya.
 
 ## Screenshot
 Screenshot ini merupakan bagian dari fitur pencarian, yang mana mencari buku dengan kata kunci.
